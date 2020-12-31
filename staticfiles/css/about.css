@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*:not(.fas):not(.fab):not(.far) {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 300;
+}
+
+#strong {
+  font-weight: 450;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#all {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#me {
+  min-height: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 50px;
+}
+
+#me #img {
+  height: 150px;
+  width: 150px;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  border-radius: 100px;
+  margin-bottom: 30px;
+}
+
+#me #img img {
+  border-radius: 100px;
+}
+
+#divider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#divider hr {
+  width: 40%;
+  border-color: rgba(0, 0, 0, 0.3);
+  height: 1px;
+  margin: 15px;
+}
+
+#staytuned {
+  min-height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  margin: 50px;
+}
+
+#staytuned h2#strong {
+  margin: 0;
+  color: #E84A5F;
+}
+
+#form {
+  min-height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 50px;
+}
+
+#form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#form form .uk-alert-danger {
+  width: 250px;
+}
+
+#form form textarea {
+  resize: none;
+  border: solid 1px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  width: 250px;
+  padding: 13px;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+#form form textarea:hover {
+  border: solid 1px #FF847C;
+}
+
+#form form textarea:focus {
+  outline: none;
+}
+
+#form form input {
+  height: 40px;
+  width: 250px;
+  margin-bottom: 10px;
+  border: 0;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  padding: 13px;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+#form form input:hover {
+  border-bottom: solid 1px #FF847C;
+}
+
+#form form input:focus {
+  outline: none;
+}
+
+#form form button {
+  height: 40px;
+  width: 250px;
+  margin-bottom: 10px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.5);
+  background-color: white;
+  color: #7eb97c;
+  border-color: #7eb97c;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+#form form button:hover {
+  background-color: #7eb97c;
+  color: white;
+  border-color: #7eb97c;
+}
+
+@media only screen and (min-width: 768px) {
+  #me {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 0;
+    margin-top: 50px;
+  }
+  #me #img {
+    height: 180px;
+    width: 180px;
+    margin-right: 40px;
+  }
+  #me #content {
+    width: 50%;
+  }
+  #staytuned {
+    margin: 0;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  #form {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  #form form textarea,
+  #form form input,
+  #form form button,
+  #form form .uk-alert-danger {
+    width: 350px;
+  }
+}
+
+@media only screen and (max-width: 280px) {
+  #form form textarea,
+  #form form input,
+  #form form button,
+  #form form .uk-alert-danger {
+    width: 210px;
+  }
+}
+/*# sourceMappingURL=about.css.map */

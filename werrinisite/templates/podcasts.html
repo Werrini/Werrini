@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Podcast</title>
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favico.ico' %}" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/podcasts.css' %}" />
+  <script src="{% static 'js/uikit.min.js' %}"></script>
+  <script src="{% static 'js/uikit-icons.min.js' %}"></script>
+  {% comment %} ckeditor {% endcomment %}
+  <link rel="stylesheet"
+    href="{% static 'ckeditor/ckeditor/plugins/codesnippet/lib/highlight/styles/atelier-forest.light.css' %}" />
+  <script src="{% static 'ckeditor/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js' %}"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+
+</head>
+
+<body>
+  <nav uk-sticky class="uk-navbar uk-navbar-container" id='navbar'>
+    <div class="uk-navbar-left">
+      <ul class="uk-navbar-nav">
+        <li><a id="logocontainer" href="{% url 'home' %}"><img id="logo" src="{% static 'images/logo3.png' %}" width="110px" style="display:none"></a></li>
+      </ul>
+    </div>
+    <div id="tochange" class="uk-navbar-center">
+      <ul class="uk-navbar-nav">
+        <li><a href="{% url 'home' %}" id="home" style="display:none">Home</a> </li>
+        <li><a href="{% url 'podcasts' %}" id="podcast"><i class="fas fa-microphone-alt navicon" style="margin-right: 5px"></i>Podcast</a> </li>
+        <li><a href="{% url 'about' %}"><i class="fas fa-info-circle navicon" style="margin-right: 5px"></i>About</a> </li>
+        <li><a class="uk-button uk-button-default" id="blog" href="{% url 'blogs' %}"><i class="far fa-comment-alt navicon" style="margin-right: 5px"></i>Blog</a> </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="all">
+    <div id="svg">
+        <img src="{% static 'images/allgreen_podcast.svg' %}" alt="">
+    </div>
+    <div id="content">
+      <div id="fst">
+        <h2>Welcome to the <strong style="color: #7eb97c; text-decoration-line: underline;">first</strong> Aabic/Moroccan <strong id="django">django</strong> podcast!</h2>
+      </div>
+    </div>
+    {%include 'footer.html'%}
+  </div>
+
+  <script src="{% static 'js/podcasts.js' %}"></script>
+</body>
+
+</html>

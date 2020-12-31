@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Werrini blog</title>
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favico.ico' %}" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/blogs.css' %}" />
+  <script src="{% static 'js/uikit.min.js' %}"></script>
+  <script src="{% static 'js/uikit-icons.min.js' %}"></script>
+
+</head>
+
+<body>
+  {%include 'navbar.html'%}
+  <div id="all">
+    <div id="content">
+      <h1>Articles</h1>
+      <div class="uk-child-width-1-3@m uk-flex-center" uk-grid>
+        {% for post in posts %}
+          <div>
+            <div class="uk-card uk-card-default">
+              <div class="uk-card-media-top">
+                <img src="{% static 'images/' %}{{post.thumbnail}}">
+              </div>
+              <div class="uk-card-body">
+                <h3 class="uk-card-title">{{post.headline}}</h3>
+                <p>{{ post.sub_headline }}</p>
+                <a href="{% url 'blogs' %}{{post.slug}}">Continue reading</a>
+                {% if post.tags.all %}
+                  <div id="tags">
+                    {% for tag in post.tags.all %}
+                      <a href="{% url 'blogs' %}category/{{tag}}" class="uk-label">{{tag}}</a>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      {% if page_obj != None %}
+      <ul class="uk-pagination"  uk-margin>
+              {% if page_obj.has_previous %}
+                  <li><a href="?page={{ page_obj.previous_page_number }}"><span class="uk-margin-small-right" uk-pagination-previous></span> Previous</a></li>
+              {% endif %}
+
+              
+              {% if page_obj.has_previous %}          
+                <li class="uk-disabled" id="previous">{{page_obj.previous_page_number}}</li>
+              {% endif %}
+
+              <li class="uk-disabled" id="current">{{ page_obj.number }}</li>
+
+              {% if page_obj.has_next %}          
+                <li class="uk-disabled" id="next">{{page_obj.next_page_number}}</li>
+              {% endif %}
+
+              {% if page_obj.has_next %}
+                  <li class="uk-margin-auto-left"><a href="?page={{ page_obj.next_page_number }}">Next <span class="uk-margin-small-left" uk-pagination-next></span></a></li>
+              {% endif %}
+      </ul>
+      {% endif %}
+    </div>
+    {%include 'footer.html'%}
+  </div>
+</body>
+
+</html>

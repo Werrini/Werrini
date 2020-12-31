@@ -1,0 +1,150 @@
+// navbaredit
+* {
+    box-sizing: border-box;
+}
+
+*:not(.fas):not(.fab):not(.far) {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 300;
+}
+
+.uk-navbar {
+    padding-left: 20px;
+    padding-right: 35px;
+    height: 70px;
+    // box-shadow: 0px 4px 6px -1px rgba(0,0,0,0.2);
+    background-color: rgba(126, 185, 124, 0.06) !important;
+    transition: all 200ms ease-in-out;
+}
+
+.nav-colored {
+    background-color: white !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .1);
+}
+
+.nav-transparent {
+    background-color: rgba(126, 185, 124, 0.06) !important;
+}
+
+
+ul.uk-navbar-nav>li>a {
+    margin: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    min-height: 40px;
+    color: #2A363B;
+    font-size: 12px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 450 !important;
+    transition: all 200ms ease-in-out;
+}
+
+.uk-navbar-nav>li>a:hover {
+    color: #7eb97c !important;
+}
+
+
+#podcast {
+    color: #7eb97c !important;
+}
+
+#blog {
+    border-color: transparent;
+}
+
+@media only screen and (min-width: 768px) {
+    ul.uk-navbar-nav>li>a {
+        font-size: 14px;
+    }
+}
+
+// for smaller screens for the nav icon
+@media only screen and (max-width: 280px) {
+    .navicon{
+      display: none !important;
+    }
+  }
+
+// navbaredit
+
+// scrollbar
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(237, 236, 233, .5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d3d1cb;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(153, 153, 153, .7);
+}
+
+// scrollbar
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+@font-face {
+    font-family: django;
+    src: url('../../static/fonts/DTLProkyonT.otf');
+}
+
+body {
+    min-height: 110vh;
+    margin: 0;
+    padding: 0;
+}
+
+#all {
+    margin: 0;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10%;
+    margin-top: 0px;
+
+    a {
+        color: #E84A5F;
+    }
+
+    h1 {
+        margin-bottom: 50px;
+        align-self: flex-start;
+    }
+}
+
+#svg {
+    width: 100%;
+    height: 100%;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+#fst {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+}
+
+
+#django {
+    font-family: django;
+    color: rgba(79, 83, 82, 1.0);
+}

@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+    <script src="{% static 'js/uikit.min.js' %}"></script>
+    <script src="{% static 'js/uikit-icons.min.js' %}"></script>
+</head>
+
+<body>
+    <div id='footer'>
+        <div id="links">
+            <div id="other">
+                <a href="{% url 'about' %}#form">Contact</a>
+                <a href="{% url 'about' %}">About</a>
+                <a href="{% url 'podcasts' %}">Podcast</a>
+            </div>
+        </div>
+        <hr>
+        <div id='footer-content'>
+            <h5>Built with love using Django</h5>
+            <h6>Werrini&#169; 2020.</h6>
+        </div>
+        <div id='social-links'>
+            <a href="https://github.com/Werrini"><i class='fab fa-github'></i></a>
+            <a href="https://www.instagram.com/werrini_/"><i class='fab fa-instagram'></i></a>
+            <a href="https://dev.to/werrini"><i class='fab fa-dev'></i></a>
+        </div>
+    </div>
+</body>
+
+</html>

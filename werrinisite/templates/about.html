@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Werrini</title>
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favico.ico' %}" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/about.css' %}" />
+  <script src="{% static 'js/uikit.min.js' %}"></script>
+  <script src="{% static 'js/uikit-icons.min.js' %}"></script>
+
+</head>
+
+<body>
+  {%include 'navbar.html'%}
+  <div class="all">
+    <div id="me">
+      <div id="img">
+        <img src="{% static 'images/me.jpg' %}" alt="">
+      </div>
+      <div id="content">
+        <h4 id="strong">About Werrini</h4>
+        <p>Werrini is an environment of learning and sharing learnings.</p>
+        <p>My name is Inmass. I am a web developer who is eager and passionate to learn and impact others;
+          Founder of Werrini for the sake of learning and teaching, and still developing it.</p>
+      </div>
+    </div>
+    <div id="divider">
+      <hr>
+    </div>
+    <div id="staytuned">
+      <h2 id='strong'>STAY TUNED!</h2>
+      <h3>soon you will be able to join the community and become a Werrini too :D</h3>
+    </div>
+    <div id="divider">
+      <hr>
+    </div>
+    <div id="form">
+      <h3 is='strong'>Get in touch / give your feedback</h3>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.from_email }}
+        {{ form.subject }}
+        {{ form.message }}
+        {% if form.errors %}
+        <div class="errors">
+          {% for field in form %}
+            {% for error in field.errors %}
+              <div class="uk-alert-danger" uk-alert>
+                <a class="uk-alert-close" uk-close></a>
+                <p>{{ error|escape }}</p>
+              </div>
+            {% endfor %}
+          {% endfor %}
+          {% for error in form.non_field_errors %}
+            <div class="uk-alert-danger" uk-alert>
+              <a class="uk-alert-close" uk-close></a>
+              <p>{{ error|escape }}</p>
+            </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+        <button class="uk-button uk-button-default" type="submit">Send</button>
+      </form>
+    </div>
+    {%include 'footer.html'%}
+  </div>
+
+  <script>
+    {% if messages %}
+      {% for i in messages %}
+      UIkit.notification({
+        message: '<span uk-icon=\'icon: info\'></span>{{i}}',
+        status: 'success',
+        pos: 'top-center',
+        timeout: 5000
+      });
+      {% endfor %}
+    {% endif %}
+    
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}" />
+  <script src="{% static 'js/uikit.min.js' %}"></script>
+  <script src="{% static 'js/uikit-icons.min.js' %}"></script>
+</head>
+
+<body>
+  <nav uk-sticky class="uk-navbar uk-navbar-container">
+    <div class="uk-navbar-left">
+      <ul class="uk-navbar-nav">
+        <li><a id="logocontainer" href="{% url 'home' %}"><img id="logo" src="{% static 'images/logo.png' %}" width="110px" onmouseover="hover(this);" onmouseout="unhover(this);" style="display:none"></a></li>
+      </ul>
+    </div>
+    <div id="tochange" class="uk-navbar-center">
+      <ul class="uk-navbar-nav">
+        <li><a href="{% url 'home' %}" id="home" style="display:none">Home</a> </li>
+        <li><a href="{% url 'podcasts' %}"><i class="fas fa-microphone-alt navicon" style="margin-right: 5px"></i>Podcast</a> </li>
+        <li><a href="{% url 'about' %}"><i class="fas fa-info-circle navicon" style="margin-right: 5px"></i>About</a> </li>
+        <li><a class="uk-button uk-button-default" id="blog" href="{% url 'blogs' %}"><i class="far fa-comment-alt navicon" style="margin-right: 5px"></i>Blog</a> </li>
+      </ul>
+    </div>
+  </nav>
+
+  <script type="text/javascript" src="{% static 'js/navbar.js'%}"></script>
+</body>
+
+</html>
